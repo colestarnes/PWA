@@ -1,7 +1,7 @@
 const FILES_TO_CACHE = [
     "/",
-    "/index.html",
-    "/assets/js/index.js",
+    "/assets/js/index.js", 
+    "/assets/js/db.js",
     "/assets/css/style.css",
     "/manifest.webmanifest",
     "/assets/images/icons/icon-192x192.png",
@@ -20,7 +20,7 @@ const FILES_TO_CACHE = [
       })
     );
   
-    self.skipWaiting();
+
   });
   
   self.addEventListener("activate", function(evt) {
@@ -37,7 +37,6 @@ const FILES_TO_CACHE = [
       })
     );
   
-    self.clients.claim();
   });
   
  
