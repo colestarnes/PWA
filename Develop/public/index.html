@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +9,15 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./assets/css/styles.css">
+
   <title>Budget Tracker</title>
 </head>
-
 <body>
   <div class="wrapper">
     <div class="total">
       <div class="total">Your total is: $<span id="total">0</span></div>
     </div>
+
     <div class="form">
       <input type="text" id="t-name" placeholder="Name of transaction" />
       <input type="number" min="0" id="t-amount" placeholder="Transaction amount" />
@@ -40,20 +40,17 @@
     
     <canvas id="myChart"></canvas>
   </div>
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="./assets/js/index.js"></script>
+  <script src="./assets/js/db.js"></script>
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
-        navigator.serviceWorker.register("service-worker.js")
-          .then(reg => {
-            console.log("We found your service worker file!", reg);
-          });
+        navigator.serviceWorker.register("service-worker.js").then(reg => {
+          console.log("We found your service worker file!", reg);
+        });
       });
     }
   </script>
-  <script src="./assets/js/db.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-  <script src="index.js"></script>
 </body>
-
 </html>
